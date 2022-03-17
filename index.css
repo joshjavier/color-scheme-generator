@@ -21,7 +21,6 @@ ul {
 }
 
 button, select, input {
-    min-height: 42px;
     border: none;
     cursor: pointer;
 }
@@ -31,7 +30,7 @@ main {
     height: 100vh;
 }
 
-p {
+button {
     font-size: 0.75rem;
 }
 
@@ -51,11 +50,14 @@ p {
 }
 
 form {
-    /*height: 90px;*/
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
     max-width: 550px;
+}
+
+form > * {
+    min-height: 42px;
 }
 
 input[type=color] {
@@ -73,12 +75,6 @@ input[type=color] {
 }
 
 
-select, button {
-    border: 1px solid #D1D5DB;
-    background: #FFFFFF;
-    box-shadow: 0px 1px 2px rgba(0,0,0,0.05);
-}
-
 .select-wrapper {
     flex-grow: 5;
     position: relative;
@@ -92,23 +88,35 @@ select, button {
     pointer-events: none;
 }
 
-select {
+.top-bar select,
+.top-bar button {
+    border: 1px solid #D1D5DB;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.05);
+}
+
+.top-bar select:hover, .top-bar button:hover,
+.top-bar select:focus, .top-bar button:focus {
+    box-shadow: 0px 2px 12px rgba(0,0,0,0.05);
+}
+
+.top-bar select {
     border-radius: 6px;
     appearance: none;
     padding: 9px 13px;
     width: 100%;
+    height: 100%;
 }
 
 
-button {
+.top-bar button {
     border-radius: 4px;
     padding: 13px 11px;
     flex-grow: 1;
-    font-size: 0.75rem;
     font-weight: 500;
 }
 
-button:active {
+.top-bar button:active {
     box-shadow: inset 0px 2px 4px rgba(0,0,0,0.05);
 }
 
