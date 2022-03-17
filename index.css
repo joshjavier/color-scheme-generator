@@ -1,0 +1,163 @@
+/*------------------------------------*\
+  #BASE
+\*------------------------------------*/
+
+* {
+    box-sizing: border-box;
+    font-family: inherit;
+    line-height: inherit;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+}
+
+ul {
+    list-style-type: none;
+}
+
+button, select, input {
+    min-height: 42px;
+    border: none;
+    cursor: pointer;
+}
+
+main {
+    position: relative;
+    height: 100vh;
+}
+
+p {
+    font-size: 0.75rem;
+}
+
+
+
+/*------------------------------------*\
+  #TOP-BAR
+\*------------------------------------*/
+
+.top-bar {
+    padding: 25px 15px;
+    box-shadow: 0px 4px 11px rgba(0,0,0,0.15);
+    background: #FFFFFF;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+form {
+    /*height: 90px;*/
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    max-width: 550px;
+}
+
+input[type=color] {
+    flex-shrink: 0;
+    width: 61px;
+}
+
+::-webkit-color-swatch-wrapper {
+    background: #D1D5DB;
+    padding: 4px 5px;
+}
+
+::-webkit-color-swatch {
+    border: 0.5px solid #313131;
+}
+
+
+select, button {
+    border: 1px solid #D1D5DB;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.05);
+}
+
+.select-wrapper {
+    flex-grow: 5;
+    position: relative;
+}
+
+.select-arrow {
+    position: absolute;
+    right: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+select {
+    border-radius: 6px;
+    appearance: none;
+    padding: 9px 13px;
+    width: 100%;
+}
+
+
+button {
+    border-radius: 4px;
+    padding: 13px 11px;
+    flex-grow: 1;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+button:active {
+    box-shadow: inset 0px 2px 4px rgba(0,0,0,0.05);
+}
+
+
+
+/*------------------------------------*\
+  #COLOR-STRIPS
+\*------------------------------------*/
+
+.color-strips {
+    /*border: 1px solid seagreen;*/
+    /*background: pink;*/
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.color-strips ul {
+    display: flex;
+    flex-wrap: wrap;
+    /*border: 2px solid red;*/
+    height: 100%;
+    width: 100%;
+}
+
+.color-strip {
+    flex-grow: 1;
+    min-width: 100px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /*z-index: -1;*/
+    /*height: 100%;*/
+}
+
+.color-strip:hover {
+    opacity: 0.8;
+}
+
+.color-block {
+    height: 100%;
+}
+
+.color-name {
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    /*width: 100%;*/
+    text-align: center;
+    background: #FFFFFF;
+    /*box-shadow: 0px 4px 11px rgba(0,0,0,0.15);*/
+    padding: 0.9em 2.25em;
+}
