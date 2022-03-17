@@ -143,8 +143,27 @@ input[type=color] {
     flex-direction: column;
 }
 
+.color-name:focus,
 .color-strip:hover {
-    opacity: 0.8;
+    z-index: 1;
+}
+
+.color-name:focus
+.color-strip:hover > .color-name {
+    background: #F8F8F8;
+}
+
+.color-strip:hover {
+    box-shadow: 0 0 0 0.1rem;
+}
+
+.color-strip:focus-within {
+    z-index: 1;
+    box-shadow: 0 0 0 0.1rem;
+}
+
+.color-strip:focus-within .color-name:focus {
+    outline: none;
 }
 
 .color-block {
@@ -156,4 +175,17 @@ input[type=color] {
     background: #FFFFFF;
     /*box-shadow: 0px 4px 11px rgba(0,0,0,0.15);*/
     padding: 1em 1.5em;
+}
+
+.color-name::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.color-name.color-name:active {
+    background: #F0F0F0;
 }
