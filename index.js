@@ -37,6 +37,38 @@ function paint(colors) {
     }
 }
 
+async function copyToClipboard(event) {
+    const hex = event.target.textContent
+    try {
+        await navigator.clipboard.writeText(hex)
+    } catch(err) {
+        console.log("Clipboard access denied. Time to go old school...")
+        copyUsingExecCommand(hex)
+    }
+    
+    // briefly show a popup to notify the user
+    popUp.textContent = hex + " copied to clipboard"
+    clearTimeout(timeoutId)
+    popUp.style.opacity = 0.9
+    timeoutId = setTimeout(() => {
+        popUp.style.opacity = null
+    }, 2000)
+}
+
+function copyUsingExecCommand(text) {
+    const input = document.createElement("input")
+    input.value = text
+    input.readOnly = true
+    input.style = {
+        position: "absolute",
+        left: "-9999px"
+    }
+    document.body.append(input)
+    input.select()
+    document.execCommand("copy")
+    input.remove()
+}
+
 
 
 const colorInput = document.getElementById("color-input")
@@ -49,8 +81,12 @@ const popUp = document.getElementById("pop-up")
 let colors = ["#F55A5A", "#2B283A", "#FBF3AB", "#AAD1B6", "#A626D3"]
 let seedColor = colorInput.value
 let mode = colorSchemeMode.value
+let timeoutId
 
 button.addEventListener("click", handleClick);
+colorNames.forEach(button => {
+    button.addEventListener("click", copyToClipboard)
+})
 
 // Paint initial colors
 colorInput.value = colors[0]
