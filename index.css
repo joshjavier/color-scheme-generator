@@ -1,4 +1,14 @@
 /*------------------------------------*\
+  #CSS-VARIABLES
+\*------------------------------------*/
+
+:root {
+    --body-padding: 0;
+}
+
+
+
+/*------------------------------------*\
   #BASE
 \*------------------------------------*/
 
@@ -14,6 +24,8 @@
 body {
     font-family: 'Inter', sans-serif;
     min-height: 100vh;
+    padding: var(--body-padding);
+    background: #1C1C1C;
 }
 
 ul {
@@ -29,6 +41,8 @@ main {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 button {
@@ -51,7 +65,6 @@ form {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
-    max-width: 550px;
 }
 
 form > * {
@@ -211,4 +224,17 @@ input[type=color] {
     opacity: 0;
     border-radius: 4px;
     transition: opacity 1s linear;
+}
+
+
+
+@media (min-width: 600px) {
+    :root {
+        --body-padding: 5vmax;
+    }
+
+    main {
+        height: calc(100vh - (var(--body-padding) + var(--body-padding)));
+        max-height: 700px;
+    }
 }
