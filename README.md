@@ -6,7 +6,7 @@ A solo project from the [Scrimba Frontend Developer Career Path](https://scrimba
 
 - [Overview](#overview)
   - [Requirements](#requirements)
-  - [Screenshot](#screenshot)
+  - [Screenshots](#screenshots)
   - [Links](#links)
 - [My process](#my-process)
   - [Useful resources](#useful-resources)
@@ -21,6 +21,14 @@ A solo project from the [Scrimba Frontend Developer Career Path](https://scrimba
 - [x] Clicking button makes request to [The Color API](https://www.thecolorapi.com/) to get a color scheme
 - [x] Display the scheme colors and hex values on the page
 - [x] Stretch goal: click hex values to copy to clipboard
+
+### Screenshots
+
+![Color Scheme Generator (desktop view)](./images/color-scheme-generator-desktop.png)
+
+![Color Scheme Generator (mobile view)](./images/color-scheme-generator-mobile.png)
+
+![Color Scheme Generator (animated preview)](./images/color-scheme-generator-preview.gif)
 
 ### Links
 
