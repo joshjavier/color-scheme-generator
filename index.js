@@ -1,3 +1,11 @@
+const colorInput = document.getElementById("color-input")
+const colorSchemeMode = document.getElementById("color-scheme-mode")
+const button = document.getElementById("button")
+const colorBlocks = document.querySelectorAll(".color-block")
+const colorNames = document.querySelectorAll(".color-name")
+const popUp = document.getElementById("pop-up")
+
+
 function handleClick(event) {
     event.preventDefault();
     getColorScheme(colorInput.value, colorSchemeMode.value)
@@ -69,14 +77,6 @@ function copyUsingExecCommand(text) {
     input.remove()
 }
 
-
-
-const colorInput = document.getElementById("color-input")
-const colorSchemeMode = document.getElementById("color-scheme-mode")
-const button = document.getElementById("button")
-const colorBlocks = document.querySelectorAll(".color-block")
-const colorNames = document.querySelectorAll(".color-name")
-const popUp = document.getElementById("pop-up")
 
 let colors = ["#F55A5A", "#2B283A", "#FBF3AB", "#AAD1B6", "#A626D3"]
 let seedColor = colorInput.value
