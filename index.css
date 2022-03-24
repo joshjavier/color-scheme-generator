@@ -33,6 +33,9 @@ ul {
 }
 
 button, select, input {
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0;
     border: none;
     cursor: pointer;
     font-size: 100%;
@@ -114,7 +117,6 @@ input[type=color] {
 
 .top-bar select {
     border-radius: 6px;
-    appearance: none;
     padding: 9px 13px;
     width: 100%;
     height: 100%;
